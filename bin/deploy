@@ -1,0 +1,11 @@
+#bin/bash
+
+#2: mv ./build/libs/*.jar ./build/tmp
+# ./build/tmp/hugb_hello_world
+
+#4:
+./gradlew installDist
+
+cp -R ./build/install/hugb_hello_world  ./build/tmp/
+
+./build/tmp/hugb_hello_world/bin/hugb_hello_world
