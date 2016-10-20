@@ -1,11 +1,12 @@
 #bin/bash
 
-#2: mv ./build/libs/*.jar ./build/tmp
-# ./build/tmp/tictactoe
+mv ./build/libs/*.jar ./build/tmp 
+java -jar ./build/tmp/*.jar
 
-#4:
-./gradlew installDist
 
-cp -R ./build/install/tictactoe  ./build/tmp/
+#./gradlew installDist
 
-./build/tmp/tictactoe/bin/tictactoe
+#cp -R ./build/install/tictactoe  ./build/tmp/
+
+#./build/tmp/tictactoe/bin/tictactoe
+
