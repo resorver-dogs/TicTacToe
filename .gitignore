@@ -1,5 +1,4 @@
-# Remove build directory and .gradle directories
-build
+build/
 .gradle
 
 *.class
@@ -9,7 +8,6 @@ build
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
