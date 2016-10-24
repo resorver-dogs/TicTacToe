@@ -1,0 +1,43 @@
+
+
+Common Gradle Commands
+Find versions
+-- version
+gradle --version
+
+-- help gradle -q help
+List down all tasks
+gradle -q tasks
+
+-- Find what all tasks are involved for given run
+gradle --dry-run build
+Convert a project to eclipse project
+-- Assuming you are using eclipse plugin in your project 
+ gradle eclipse
+Build the project
+-- create war/jar 
+gradle clean build
+How to run Unit tests
+gradle test
+Check dependency tree
+gradle -q dependencies
+
+Controlling logging level
+
+gradle ---info build
+
+gradle ---stacktrace build
+
+gradle ---full-stacktrace build
+
+gradle ---info build
+Gradle daemon
+Each time we execute the gradle command, a new jvm is started. To reduce the build execution time we can use The command-line option, –daemon, which starts a new Java process which loads Gradle classes and libraries. The next time when we run Gradle with the –daemon option, build will be faster as the JVM with the required Gradle classes and libraries is already running.
+
+gradle --daemon build
+gradle --no-daemon build
+gradle --stop
+How to do profiling
+If you want to know about how much time is spent in tasks we can use the –profile command-line option. Gradle generates a report file in the build/reports/profile directory.
+
+gradle --profile build
