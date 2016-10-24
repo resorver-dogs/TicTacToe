@@ -1,4 +1,4 @@
-#bin/bash
+#!/bin/bash
 
 mv ./build/libs/*.jar ./build/tmp 
 java -jar ./build/tmp/*.jar
