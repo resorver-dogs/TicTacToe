@@ -37,3 +37,7 @@ jar {
  attributes("Main-Class": "com.reservoir.TicTacToe.TicTacToe")
  }
 }
+
+task stage {
+    dependsOn build
+}
