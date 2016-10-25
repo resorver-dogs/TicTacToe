@@ -1,1 +1,5 @@
-utfaera Board.jaca takk fyrir
+package Com.Reservoid.TicTacToe.
+
+public class Board {
+    
+}
