@@ -7,5 +7,5 @@
 	*  Document describing the initial design.
 
 
-![GitHub Logo](https://drive.google.com/open?id=0B4rYUhKDWR4LTHExTXFDZG1LNVU)
-Format: ![Alt Text](https://drive.google.com/open?id=0B4rYUhKDWR4LTHExTXFDZG1LNVU)
+![GitHub Logo](https://github.com/resorver-dogs/TicTacToe/blob/master/images/classDiagram.png)
+Format: ![Alt Text](https://github.com/resorver-dogs/TicTacToe/blob/master/images/classDiagram.png)
