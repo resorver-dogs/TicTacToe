@@ -36,7 +36,7 @@ public class Board {
     }
 
     public boolean checkForWin() {
-        return checkForRowsWin();
+        return checkForRowsWin() || checkForColsWin();
     }
     
     private boolean checkForRowsWin() {
@@ -47,5 +47,15 @@ public class Board {
         }
         return false;
     }
+
+     private boolean checkForColsWin() {
+        for(int i = 0; i < 3; i++) {
+            if(board[0][i] != '-' && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     
 }
