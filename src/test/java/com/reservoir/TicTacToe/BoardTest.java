@@ -56,6 +56,4 @@ public class BoardTest {
             board.addToCell('X', 0, 0);
             board.addToCell('O', 0, 0);
         }
-
-
 }
