@@ -19,4 +19,20 @@ public class BoardTest {
             assertArrayEquals(board.getBoard(), charBoard);        
         }
 
+        @Test 
+        public void addMarksToCell() {
+            Board board = new Board();
+            board.addToCell('X', 0, 0);
+            board.addToCell('O', 1, 1);
+            board.addToCell('X', 2, 2);
+            assertEquals('X', board.getBoard()[0][0]);
+            assertEquals('-', board.getBoard()[0][1]);
+            assertEquals('-', board.getBoard()[1][0]);
+            assertEquals('O', board.getBoard()[1][1]);
+            assertEquals('-', board.getBoard()[1][2]);
+            assertEquals('-', board.getBoard()[2][0]);
+            assertEquals('-', board.getBoard()[2][1]);
+            assertEquals('X', board.getBoard()[2][2]);
+        }
+
 }
