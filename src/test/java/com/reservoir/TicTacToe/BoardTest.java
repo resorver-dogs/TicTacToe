@@ -11,6 +11,11 @@ public class BoardTest {
         public void boardCorrectlyBuilt() {
             Board board = new Board();
             char[][] charBoard = new char[3][3];
+            for(int row = 0; row < 3; row++) {
+                for(int col = 0; col < 3; col ++) {
+                    charBoard[row][col] = '-';
+                }
+            }
             assertArrayEquals(board.getBoard(), charBoard);        
         }
 
