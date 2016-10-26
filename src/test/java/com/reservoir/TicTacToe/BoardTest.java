@@ -35,4 +35,17 @@ public class BoardTest {
             assertEquals('X', board.getBoard()[2][2]);
         }
 
+        
+        @Rule
+        public ExpectedException thrown = ExpectedException.none();
+
+
+        @Test
+        public void TryingToAddMarkOutsideOfTheBoard() {
+            Board board = new Board();
+            thrown.expect(IllegalArgumentException.class);
+            thrown.expectMessage("Error: Trying to add a mark outside of the board boundaries (col: 0-2, row: 0-2)");
+            board.addToCell('X', -1, 4);
+        }
+
 }
