@@ -1,1 +1,2 @@
-web: java -jar "build/lib/*":build/libs/tictactoe.jar
+
+web: java  -cp "build/lib/*":build/libs/tictactoe.jar  com.reservoir.TicTacToe.TicTacToe
