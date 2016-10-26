@@ -1,4 +1,4 @@
-package Com.Reservoid.TicTacToe.
+package com.reservoir.TicTacToe;
 
 public class Board {
     
