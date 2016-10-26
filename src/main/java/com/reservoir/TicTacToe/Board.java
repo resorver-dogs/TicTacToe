@@ -1,1 +1,1 @@
-utfaera Board.jaca takk fyrir
+//utfaera Board.jaca takk fyrir
