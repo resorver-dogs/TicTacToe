@@ -36,7 +36,7 @@ public class Board {
     }
 
     public boolean checkForWin() {
-        return checkForRowsWin() || checkForColsWin();
+        return checkForRowsWin() || checkForColsWin() || checkForDiagWin();
     }
     
     private boolean checkForRowsWin() {
@@ -48,7 +48,7 @@ public class Board {
         return false;
     }
 
-     private boolean checkForColsWin() {
+    private boolean checkForColsWin() {
         for(int i = 0; i < 3; i++) {
             if(board[0][i] != '-' && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
                 return true;
@@ -56,6 +56,30 @@ public class Board {
         }
         return false;
     }
-    
+
+    private boolean checkForDiagWin() {
+        if(board[0][0] != '-' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+            return true;
+        }
+        if(board[0][2] != '-' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+            return true;
+        }        
+        return false;
+    }
+
+    public boolean boardIsFull() {
+        // Returns true if the board is fully completed 
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                if(board[i][j] == '-') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }    
+    public boolean isDraw() {
+        return boardIsFull() && !checkForWin();
+    }
     
 }
