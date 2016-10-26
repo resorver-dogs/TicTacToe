@@ -34,5 +34,18 @@ public class Board {
     public char[][] getBoard() {
         return board;
     }
+
+    public boolean CheckForWin() {
+        return CheckForRowsWin();
+    }
+    
+    private boolean CheckForRowsWin() {
+        for(int i = 0; i < 3; i++) {
+            if(board[i][0] != '-' && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+                return true;
+            }
+        }
+        return false;
+    }
     
 }

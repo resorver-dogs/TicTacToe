@@ -56,4 +56,11 @@ public class BoardTest {
             board.addToCell('X', 0, 0);
             board.addToCell('O', 0, 0);
         }
+
+        @Test
+        public void CheckForWin() {
+            Board board = new Board();
+            assertFalse(board.CheckForWin());
+        }
+
 }
