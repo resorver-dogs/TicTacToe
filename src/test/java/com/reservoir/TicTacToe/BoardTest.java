@@ -58,9 +58,36 @@ public class BoardTest {
         }
 
         @Test
-        public void CheckForWin() {
+        public void CheckForWinEmptyBoard() {
             Board board = new Board();
-            assertFalse(board.CheckForWin());
+            assertFalse(board.checkForWin());
+        }
+
+        @Test
+        public void CheckForWin_XHasWonRow() {
+            Board board = new Board();
+            board.addToCell('X', 0, 0);
+            board.addToCell('X', 0, 1);
+            board.addToCell('X', 0, 2);
+            assertTrue(board.checkForWin());
+        }
+
+        @Test
+        public void CheckForWin_OHasWonRow() {
+            Board board = new Board();
+            board.addToCell('O', 2, 0);
+            board.addToCell('O', 2, 1);
+            board.addToCell('O', 2, 2);
+            assertTrue(board.checkForWin());
+        }
+
+        @Test
+        public void CheckForWin_NoWinsDifferentMarks() {
+            Board board = new Board();
+            board.addToCell('O', 1, 0);
+            board.addToCell('X', 1, 1);
+            board.addToCell('F', 1, 2);
+            assertFalse(board.checkForWin());
         }
 
 }
