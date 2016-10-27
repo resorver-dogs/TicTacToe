@@ -65,7 +65,7 @@ public class Game {
 			try
 			{	
 				board.addToCell(player.getMark(), row, col);
-
+			}
 			catch(IllegalArgumentException ex)
 			{
 				System.out.println(ex.getMessage());
