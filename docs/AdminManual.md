@@ -2,7 +2,6 @@
 
 ## Introduction
 
-## Það sem á að koma fram:
 
 	* How to install and run the program on clients machine (in
 	  case of simple desktop program)
