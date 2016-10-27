@@ -45,7 +45,7 @@ public class Game {
 			System.out.println("Enter name for player O: ");
 		}
 		else {
-			throw new IllegalArgumentException("Error: Illegal Mark!"); 
+			throw new IllegalArgumentException("Error: Illegal number for players choose 1 or 2!"); 
 		}
 		
 		return sc.nextLine();
@@ -65,7 +65,7 @@ public class Game {
 			try
 			{	
 				board.addToCell(player.getMark(), row, col);
-			}
+
 			catch(IllegalArgumentException ex)
 			{
 				System.out.println(ex.getMessage());
