@@ -25,17 +25,35 @@ public class Game {
 	{
 		while(true)
 		{
-			int row;
-			int col;
+			int row = 0;
+			int col = 0;
 			
 			//player 1
 			while(true)
 			{
 				System.out.format("Player %s, place your %c for row and column  \n" , player1.getName(), player1.getMark());
 	        	System.out.println("Row (0-2): ");  
-				row = sc.nextInt();
+				while (sc.hasNext()) {
+					if (!sc.hasNextInt()) {
+    					System.out.println("Characters not allowed! Try again...");
+    					sc.next();
+    				}
+    				else {
+    					row = sc.nextInt();
+    					break;
+    				}
+    			}
 				System.out.println("Col (0-2): ");
-				col = sc.nextInt();
+				while (sc.hasNext()) {
+					if (!sc.hasNextInt()) {
+    					System.out.println("Characters not allowed! Try again...");
+    					sc.next();
+    				}
+    				else {
+    					col = sc.nextInt();
+    					break;
+    				}
+    			}
 				
 				try
 				{	
@@ -74,10 +92,27 @@ public class Game {
 			{
 				System.out.format("Player %s, place your %c for row and column \n" , player2.getName(), player2.getMark());
 	        	System.out.println("Row (0-2): ");  
-				row = sc.nextInt();
+				while (sc.hasNext()) {
+					if (!sc.hasNextInt()) {
+    					System.out.println("Characters not allowed! Try again...");
+    					sc.next();
+    				}
+    				else {
+    					row = sc.nextInt();
+    					break;
+    				}
+    			}
 				System.out.println("Col (0-2): ");
-				col = sc.nextInt();
-				
+				while (sc.hasNext()) {
+					if (!sc.hasNextInt()) {
+    					System.out.println("Characters not allowed! Try again...");
+    					sc.next();
+    				}
+    				else {
+    					col = sc.nextInt();
+    					break;
+    				}
+    			}		
 				try
 				{	
 					board.addToCell(player2.getMark(), row, col);
