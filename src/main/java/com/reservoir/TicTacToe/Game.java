@@ -23,10 +23,12 @@ public class Game {
 
 	public void runGame()
 	{
+		board.printBoard();
+		
 		while(true)
 		{
 			int row;
-			int col;
+			int col;			
 			
 			//player 1
 			while(true)
@@ -53,6 +55,7 @@ public class Game {
 				}
 				break;
 			}
+			board.printBoard();
 			
 			if(board.checkForWin())
 			{
@@ -68,10 +71,10 @@ public class Game {
 					break;
 				}
 			}
-			
+
 			//player 2 
 			while(true)
-			{
+			{				
 				System.out.format("Player %s, place your %c for row and column \n" , player2.getName(), player2.getMark());
 	        	System.out.println("Row (0-2): ");  
 				row = sc.nextInt();
@@ -94,6 +97,8 @@ public class Game {
 				}
 				break;
 			}
+			
+			board.printBoard();
 			
 			if(board.checkForWin())
 			{
