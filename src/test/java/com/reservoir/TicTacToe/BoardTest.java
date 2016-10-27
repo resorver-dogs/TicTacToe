@@ -20,7 +20,7 @@ public class BoardTest {
         }
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 3; j++) {
-                assertEquals(board.getBoard()[i][j].getToken(), newBoard[i][j].getToken());
+                assertEquals(board.getCellMark(i, j), newBoard[i][j].getToken());
             }
         }
        // assertArrayEquals(board.getBoard(), newBoard);        
@@ -32,14 +32,15 @@ public class BoardTest {
         board.addToCell('X', 0, 0);
         board.addToCell('O', 1, 1);
         board.addToCell('X', 2, 2);
-        assertEquals('X', board.getBoard()[0][0].getToken());
-        assertEquals('-', board.getBoard()[0][1].getToken());
-        assertEquals('-', board.getBoard()[1][0].getToken());
-        assertEquals('O', board.getBoard()[1][1].getToken());
-        assertEquals('-', board.getBoard()[1][2].getToken());
-        assertEquals('-', board.getBoard()[2][0].getToken());
-        assertEquals('-', board.getBoard()[2][1].getToken());
-        assertEquals('X', board.getBoard()[2][2].getToken());
+        assertEquals('X', board.getCellMark(0, 0));
+        assertEquals('-', board.getCellMark(0, 1));
+        assertEquals('-', board.getCellMark(0, 2));
+        assertEquals('-', board.getCellMark(1, 0));
+        assertEquals('O', board.getCellMark(1, 1));
+        assertEquals('-', board.getCellMark(1, 2));
+        assertEquals('-', board.getCellMark(2, 0));
+        assertEquals('-', board.getCellMark(2, 1));
+        assertEquals('X', board.getCellMark(2, 2));
     }
 
     
@@ -53,6 +54,14 @@ public class BoardTest {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Error: Trying to add a mark outside of the board boundaries (col: 0-2, row: 0-2)");
         board.addToCell('X', -1, 4);
+    }
+    
+    @Test
+    public void TryingToReachOutOfTheBoard() {
+        Board board = new Board();
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Error: Trying to reach out of board boundaries (col: 0-2, row: 0-2)");
+        board.getCellMark(2, 4);
     }
 
     @Test

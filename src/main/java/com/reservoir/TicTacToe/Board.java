@@ -32,6 +32,15 @@ public class Board {
         board[row][col].setToken(mark);
     }
 
+    
+    public char getCellMark(int row, int col) {
+        if(row > 2 || row < 0 || col > 2 || col < 0) {
+            // Column and/or row parameters illegal, should be between 0-2 - Error
+            throw new IllegalArgumentException("Error: Trying to reach out of board boundaries (col: 0-2, row: 0-2)"); 
+        }
+        return board[row][col].getToken();
+    }
+
     public Cell[][] getBoard() {
         return board;
     }
@@ -82,5 +91,6 @@ public class Board {
     public boolean isDraw() {
         return boardIsFull() && !checkForWin();
     }
+
     
 }
