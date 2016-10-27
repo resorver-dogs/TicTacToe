@@ -11,4 +11,11 @@ public class CellTest {
         assertEquals(' ', cell.getToken()); 
     }
 
+    @Test
+    public void testSetMove() {
+        Cell cell = new Cell();
+        cell.setToken('x');
+        assertEquals('x', cell.getToken()); 
+    }
+
 }

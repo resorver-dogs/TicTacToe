@@ -11,13 +11,19 @@ public class BoardTest {
     @Test
     public void boardCorrectlyBuilt() {
         Board board = new Board();
-        char[][] charBoard = new char[3][3];
+        Cell[][] newBoard = new Cell[3][3];
         for(int row = 0; row < 3; row++) {
             for(int col = 0; col < 3; col ++) {
-                charBoard[row][col] = '-';
+                newBoard[row][col] = new Cell();
+                newBoard[row][col].setToken('-');
             }
         }
-        assertArrayEquals(board.getBoard(), charBoard);        
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                assertEquals(board.getBoard()[i][j].getToken(), newBoard[i][j].getToken());
+            }
+        }
+       // assertArrayEquals(board.getBoard(), newBoard);        
     }
 
     @Test 
@@ -26,14 +32,14 @@ public class BoardTest {
         board.addToCell('X', 0, 0);
         board.addToCell('O', 1, 1);
         board.addToCell('X', 2, 2);
-        assertEquals('X', board.getBoard()[0][0]);
-        assertEquals('-', board.getBoard()[0][1]);
-        assertEquals('-', board.getBoard()[1][0]);
-        assertEquals('O', board.getBoard()[1][1]);
-        assertEquals('-', board.getBoard()[1][2]);
-        assertEquals('-', board.getBoard()[2][0]);
-        assertEquals('-', board.getBoard()[2][1]);
-        assertEquals('X', board.getBoard()[2][2]);
+        assertEquals('X', board.getBoard()[0][0].getToken());
+        assertEquals('-', board.getBoard()[0][1].getToken());
+        assertEquals('-', board.getBoard()[1][0].getToken());
+        assertEquals('O', board.getBoard()[1][1].getToken());
+        assertEquals('-', board.getBoard()[1][2].getToken());
+        assertEquals('-', board.getBoard()[2][0].getToken());
+        assertEquals('-', board.getBoard()[2][1].getToken());
+        assertEquals('X', board.getBoard()[2][2].getToken());
     }
 
     
@@ -185,5 +191,5 @@ public class BoardTest {
         board.addToCell('O', 2, 2);
         assertTrue(board.isDraw());
         assertTrue(board.boardIsFull());
-    }          
+    }        
 }
