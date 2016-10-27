@@ -26,7 +26,7 @@ public class Game {
 			System.out.println("Enter name for player O: ");
 		}
 		else {
-			throw new IllegalArgumentException("Error: Illegal Mark!"); 
+			throw new IllegalArgumentException("Error: Illegal number for players choose 1 or 2!"); 
 		}
 		
 		return sc.nextLine();
@@ -64,7 +64,7 @@ public class Game {
 				break;
 			}
 			
-			if(gameShouldEnd(1))
+			if(gameShouldEnd(player1.getName()))
 			{
 				break;
 			}
@@ -95,27 +95,18 @@ public class Game {
 				break;
 			}
 			
-			if(gameShouldEnd(2))
+			if(gameShouldEnd(player2.getName()))
 			{
 				break;
 			}
 		}
 	}
 
-	boolean gameShouldEnd(int player) {
-		String name = "";
-		if(player == 1) 
-		{
-			name = player1.getName();
-		}
-		else if (player == 2) 
-		{
-			name = player2.getName();
-		}
+	boolean gameShouldEnd(String playerName) {
 		
 		if(board.checkForWin())
 		{
-			System.out.format("Congratulations! %s you won! \n" , name);
+			System.out.format("Congratulations! %s you won! \n" , playerName);
 			System.out.println("Another game (y/n)?");
 			if(sc.nextLine() == "y" || sc.nextLine() == "Y")
 			{
