@@ -14,14 +14,16 @@ public class PlayerTest {
   
   @Test
   public void playerHasName() {
-      Player player = new Player('X', 'Gisli');
+      Player player = new Player('X', "Gisli");
       assertEquals("Gisli", player.getName());
   }
   
   @Test
   public void playerHasX() {
-      Player player = new Player('X', 'Gisli');
+      Player player = new Player('X', "Gisli");
       assertEquals('X', player.getMark());
   }
   
 }
+
+

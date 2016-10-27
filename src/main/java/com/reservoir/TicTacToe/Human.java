@@ -1,1 +1,1 @@
-Utfaera Human.java takk fyrir
+//Utfaera Human.java takk fyrir
