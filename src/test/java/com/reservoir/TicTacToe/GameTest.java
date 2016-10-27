@@ -12,4 +12,10 @@ public class GameTest {
         assertEquals("This will one day be TicTacToe game. Stay tuned!", game.getMove()); 
     }
 
+    @Test
+    public void testWrongMove() {
+    	
+    }
+
+
 }
