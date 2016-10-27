@@ -8,6 +8,7 @@ public class Game {
 	private Player player1;
 	private Player player2;
 	private Scanner sc;
+	private boolean isRunning = true;
 
 	//constructor
 	public Game(){
@@ -18,6 +19,24 @@ public class Game {
 		board = new Board();
 	}
 
+	public void runGame()
+	{
+		board.printBoard();
+
+		while(isRunning) 		
+		{
+			while(true)
+			{
+				playerPlays(player1);
+				if(gameShouldEnd(player1))	break;
+				playerPlays(player2);
+				if(gameShouldEnd(player2))	break;
+			}
+		}		
+
+	}
+
+	
 	private String inputName(int i) {
 		if(i == 1) {
 			System.out.println("Enter name for player X: ");
@@ -32,139 +51,92 @@ public class Game {
 		return sc.nextLine();
 	}
 
-	public void runGame()
-	{
-		board.printBoard();
-		int row;
-		int col;
+
+	private void playerPlays(Player player) {
+
 		while(true)
 		{
-			//player 1
-			while(true)
-			{
-				System.out.format("Player %s, place your %c for row and column  \n" , player1.getName(), player1.getMark());
-	        	System.out.println("Row (0-2): ");  
-				while (sc.hasNext()) {
-					if (!sc.hasNextInt()) {
-    					System.out.println("Characters not allowed! Try again...");
-						sc.next();
-    				}
-    				else {
-    					row = sc.nextInt();
-    					break;
-    				}
-    			}
-				System.out.println("Col (0-2): ");
-				while (sc.hasNext()) {
-					if (!sc.hasNextInt()) {
-    					System.out.println("Characters not allowed! Try again...");
-						sc.next();
-    				}
-    				else {
-    					col = sc.nextInt();
-    					break;
-    				}
-    			}
-				
-				try
-				{	
-					board.addToCell(player1.getMark(), row, col);
-				}
-				catch(IllegalArgumentException ex)
-				{
-					System.out.println(ex.getMessage());
-					continue;
-				}
-				catch(RuntimeException runTime)
-				{
-					System.out.println(runTime.getMessage());
-					continue;
-				}
-				break;
-			}
-			board.printBoard();
+			System.out.format("Player %s, place your %c for row and column  \n" , player.getName(), player.getMark());
+			System.out.println("Row (0-2): ");  
+			int row = validateIntInput();
+			System.out.println("Col (0-2): ");
+			int col = validateIntInput();
 			
-			if(gameShouldEnd(1))
+			try
+			{	
+				board.addToCell(player.getMark(), row, col);
+			}
+			catch(IllegalArgumentException ex)
 			{
-				break;
+				System.out.println(ex.getMessage());
+				continue;
 			}
-
-			//player 2 
-			while(true)
-			{				
-				System.out.format("Player %s, place your %c for row and column \n" , player2.getName(), player2.getMark());
-	        	System.out.println("Row (0-2): ");  
-				row = sc.nextInt();
-				System.out.println("Col (0-2): ");
-				col = sc.nextInt();
-				
-				try
-				{	
-					board.addToCell(player2.getMark(), row, col);
-				}
-				catch(IllegalArgumentException ex)
-				{
-					System.out.println(ex.getMessage());
-					continue;
-				}
-				catch(RuntimeException runTime)
-				{
-					System.out.println(runTime.getMessage());
-					continue;
-				}
-				break;
-			}
-
-			board.printBoard();
-			
-			if(gameShouldEnd(2))
+			catch(RuntimeException runTime)
 			{
-				break;
+				System.out.println(runTime.getMessage());
+				continue;
 			}
+			System.out.format("\n%c added to cell (" + row + "," + col + ") \n\n", player.getMark());
+			break;
 		}
+		board.printBoard();
+
 	}
 
-	boolean gameShouldEnd(int player) {
-		String name = "";
-		if(player == 1) 
-		{
-			name = player1.getName();
+	private int validateIntInput() {
+		while (sc.hasNext()) {
+			if (!sc.hasNextInt()) {
+				System.out.println("Characters not allowed! Try again...");
+				sc.next();
+			}
+			else {
+				int nextInt = sc.nextInt();
+				if(nextInt > 2 || nextInt < 0) {
+					System.out.println("Integer out of bounds (0-2)! Try again...");
+				}
+				else {
+					return nextInt;
+				}
+			}
 		}
-		else if (player == 2) 
-		{
-			name = player2.getName();
-		}
-		
+		return 0;
+	} 
+
+	private boolean gameShouldEnd(Player player) {
 		if(board.checkForWin())
 		{
-			System.out.format("Congratulations! %s you won! \n" , name);
-			System.out.println("Another game (y/n)?");
-			if(sc.nextLine() == "y" || sc.nextLine() == "Y")
-			{
-				board = new Board();
-				return false;
-			}
-			else
-			{
-				System.out.println("Thanks for playing!");
-				return true;
-			}
+			System.out.format("Congratulations! %s you won! \n" , player.getName());
+			return quitGame();
 		}
 		
 		if(board.isDraw())
 		{
-			System.out.println("Draw!");
-			System.out.println("Another game (y/n)?");
-			if(sc.nextLine() == "y" || sc.nextLine() == "Y")
+			System.out.println("Draw! Nobody wins...:(");
+			return quitGame();
+		}
+		return false;
+	}
+
+	private boolean quitGame() {
+		System.out.println("Another game (y/n)?");
+		while(sc.hasNextLine()) {
+			String nextLine = sc.nextLine();
+			if(nextLine.equals("")) {
+				continue;
+			}
+			if(nextLine.equals("y") || nextLine.equals("Y"))
 			{
 				board = new Board();
+				board.printBoard();
+				return true;
 			}
 			else
 			{
 				System.out.println("Thanks for playing!");
+				isRunning = false;
 				return true;
 			}
 		}
-		return false;
+		return true;
 	}
 }

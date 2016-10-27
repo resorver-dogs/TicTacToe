@@ -26,7 +26,7 @@ public class Board {
         }
         if(board[row][col].getToken() != '-') {
             // Trying to add to cell that has already been taken - Error
-            throw new RuntimeException("Error: Cell already marked! Please add to another cell...");
+            throw new RuntimeException("Error: Cell (" + row + "," + col + ") already marked! Please add to another cell...");
         }
         // Add the mark to the cell
         board[row][col].setToken(mark);
