@@ -11,23 +11,33 @@ public class Game {
 
 	//constructor
 	public Game(){
-		System.out.println("Enter name for player X: ");
 		sc = new Scanner(System.in);
-		String name = sc.nextLine();
-		player1 = new Player('X', name);
-		System.out.println("Enter name for player O: ");
-		name = sc.nextLine();
-		player2 = new Player('O', name);
+		player1 = new Player('X', inputName(1));
+		player2 = new Player('O', inputName(2));
+		
 		board = new Board();
+	}
+
+	private String inputName(int i) {
+		if(i == 1) {
+			System.out.println("Enter name for player X: ");
+		}
+		else if(i == 2) {
+			System.out.println("Enter name for player O: ");
+		}
+		else {
+			throw new IllegalArgumentException("Error: Illegal Mark!"); 
+		}
+		
+		return sc.nextLine();
 	}
 
 	public void runGame()
 	{
+		int row;
+		int col;
 		while(true)
 		{
-			int row;
-			int col;
-			
 			//player 1
 			while(true)
 			{
@@ -54,19 +64,9 @@ public class Game {
 				break;
 			}
 			
-			if(board.checkForWin())
+			if(gameShouldEnd(1))
 			{
-				System.out.format("Congratulations! %s you won! \n" , player1.getName());
-				System.out.println("Another game (y/n)?");
-				if(sc.nextLine() == "y" || sc.nextLine() == "Y")
-				{
-					board = new Board();
-				}
-				else
-				{
-					System.out.println("Thanks for playing!");
-					break;
-				}
+				break;
 			}
 			
 			//player 2 
@@ -95,36 +95,54 @@ public class Game {
 				break;
 			}
 			
-			if(board.checkForWin())
+			if(gameShouldEnd(2))
 			{
-				System.out.format("Congratulations! %s you won! \n" , player2.getName());
-				System.out.println("Another game (y/n)?");
-				if(sc.nextLine() == "y" || sc.nextLine() == "Y")
-				{
-					board = new Board();
-				}
-				else
-				{
-					System.out.println("Thanks for playing!");
-					break;
-				}
-			}
-			
-			if(board.boardIsFull())
-			{
-				System.out.println("Draw!");
-				System.out.println("Another game (y/n)?");
-				if(sc.nextLine() == "y" || sc.nextLine() == "Y")
-				{
-					board = new Board();
-				}
-				else
-				{
-					System.out.println("Thanks for playing!");
-					break;
-				}
 				break;
 			}
 		}
+	}
+
+	boolean gameShouldEnd(int player) {
+		String name = "";
+		if(player == 1) 
+		{
+			name = player1.getName();
+		}
+		else if (player == 2) 
+		{
+			name = player2.getName();
+		}
+		
+		if(board.checkForWin())
+		{
+			System.out.format("Congratulations! %s you won! \n" , name);
+			System.out.println("Another game (y/n)?");
+			if(sc.nextLine() == "y" || sc.nextLine() == "Y")
+			{
+				board = new Board();
+				return false;
+			}
+			else
+			{
+				System.out.println("Thanks for playing!");
+				return true;
+			}
+		}
+		
+		if(board.isDraw())
+		{
+			System.out.println("Draw!");
+			System.out.println("Another game (y/n)?");
+			if(sc.nextLine() == "y" || sc.nextLine() == "Y")
+			{
+				board = new Board();
+			}
+			else
+			{
+				System.out.println("Thanks for playing!");
+				return true;
+			}
+		}
+		return false;
 	}
 }
