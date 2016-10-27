@@ -4,7 +4,7 @@
 #java -jar ./build/tmp/*.jar
 
 
-cp -R ./build/install/tictactoe  ./build/tmp/
+cp -R ./build/install/TicTacToe  ./build/tmp/
 
-./build/tmp/tictactoe/bin/tictactoe
+./build/tmp/TicTacToe/bin/TicTacToe
 
