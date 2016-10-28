@@ -52,7 +52,7 @@ jacoco {
 }
 
 task stage {
-    dependsOn build
+    dependsOn installDist
 }
 
 jacocoTestReport {
