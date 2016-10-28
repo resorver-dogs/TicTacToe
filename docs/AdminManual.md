@@ -6,7 +6,7 @@ the game TicTacToe on a fresh machine.
 
 ##Requirements
 
-[Git](https://github.com/) account
+Git account
 
 ##Pull and deploy
  - Go to the groups [repository](https://github.com/resorver-dogs/TicTacToe/) on [GitHub](https://github.com/) and clone or download the repository on to your machine.
