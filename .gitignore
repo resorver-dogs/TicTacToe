@@ -1,5 +1,6 @@
-build/
-!build/reports/jacoco
+build/*
+!build/reports/jacoco/*
+
 .gradle
 
 *.class
