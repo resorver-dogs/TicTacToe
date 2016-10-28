@@ -14,16 +14,15 @@ public class Game
 	public Game()
 	{
 		sc = new Scanner(System.in);		
-		clearScreen();
+		clearScreenAndPrintHeader();
 		player1 = new Player('X', inputName(1));
-		player2 = new Player('O', inputName(2));
-		
+		player2 = new Player('O', inputName(2));		
 		board = new Board();
 	}
 
 	public void runGame()
 	{
-		clearScreen();
+		clearScreenAndPrintHeader();
 		board.printBoard();
 
 		while(isRunning) 		
@@ -36,12 +35,19 @@ public class Game
 				if(gameShouldEnd(player2))	break;
 			}
 		}	
+		printResults(player1, player2);
 	}
 
-	private void clearScreen() 
+	private void clearScreenAndPrintHeader() 
 	{
 		System.out.print("\033[H\033[2J");
-		System.out.flush();
+		System.out.flush();		
+		System.out.println("=================================");
+		System.out.println();
+		System.out.println("=========== TicTacToe ===========");
+		System.out.println();
+		System.out.println("=================================");
+		System.out.println();
 	}
 
 	
@@ -90,7 +96,7 @@ public class Game
 				continue;
 			}
 
-			clearScreen();
+			clearScreenAndPrintHeader();
 			System.out.format("\n%c added to cell (" + row + "," + col + ") \n\n", player.getMark());
 			break;
 		}
@@ -125,6 +131,7 @@ public class Game
 		if(board.checkForWin())
 		{
 			System.out.format("Congratulations! %s you won! \n" , player.getName());
+			player.hasWon();
 			return quitGame();
 		}
 		
@@ -134,6 +141,16 @@ public class Game
 			return quitGame();
 		}
 		return false;
+	}
+
+	private void printResults(Player player1, Player player2) 
+	{
+		System.out.println("=================================");
+		System.out.println();
+		System.out.println("Final Results:");
+		System.out.println();
+		System.out.println(player1.getName() + " (" + player1.getMark() + "): " + player1.getWins() + " wins");
+		System.out.println(player2.getName() + " (" + player2.getMark() + "): " + player2.getWins() + " wins");
 	}
 
 	private boolean quitGame() 
@@ -146,15 +163,19 @@ public class Game
 			if(nextLine.equals("y") || nextLine.equals("Y"))
 			{
 				board = new Board();
-				clearScreen();
+				clearScreenAndPrintHeader();
 				board.printBoard();
 				return true;
 			}
-			else
+			else if(nextLine.equals("n") || nextLine.equals("N"))
 			{
-				System.out.println("Thanks for playing!");
+				System.out.println("\nThanks for playing!");
 				isRunning = false;
 				return true;
+			}
+			else {
+				System.out.println("Please choose (y/n):");
+				continue;
 			}
 		}
 		return true;

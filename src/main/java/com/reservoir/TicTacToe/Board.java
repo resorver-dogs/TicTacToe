@@ -47,15 +47,16 @@ public class Board {
 
     public void printBoard() {
         System.out.println();
-        System.out.println("-------------");
+        System.out.println("          -------------");
         for(int i = 0; i < 3; i++) {
-            System.out.print("| ");
+            System.out.print("          | ");
             for(int j = 0; j < 3; j++) {
                 System.out.print(board[i][j].getToken() + " | ");
             }
             System.out.println();
-            System.out.println("-------------");
+            System.out.println("          -------------");
         }
+        System.out.println();
         System.out.println();
     }
 
