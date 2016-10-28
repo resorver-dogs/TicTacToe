@@ -8,9 +8,18 @@ the game TicTacToe on a fresh machine.
 
 [Git](https://github.com/) account
 
-##GitHub setup
-Go to the groups [repository](https://github.com/resorver-dogs/TicTacToe/) on [GitHub](https://github.com/) and clone or download the code on to your machine.
-
 ##Pull and deploy
+ - Go to the groups [repository](https://github.com/resorver-dogs/TicTacToe/) on [GitHub](https://github.com/) and clone or download the repository on to your machine.
 
+ - Open command line and navigate to the projects' root directory and enter the following `Git` commands:
+
+ ```
+ git init
+ git clone https://github.com/resorver-dogs/TicTacToe.git
+ ./bin/build_and_compile
+ ```
 ##Maintenance
+To access the latest version of the program go to the TicTacToe directory and performe the following `Git` commands:
+```
+git pull
+```

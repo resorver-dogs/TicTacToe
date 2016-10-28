@@ -1,7 +1,9 @@
 #Development manual
 ===================
 ##Introduction
-This manual contains directions on how to set up and run TicTacToe on a new machine for a new developer. Inorder to run the program the machine should have the following:
+This manual contains directions on how to set up and run TicTacToe on a new machine for a new developer.
+
+##Requirements
 
 [Git](https://github.com/)
 
@@ -20,3 +22,5 @@ Once all that is in oder you can run the following git command in your command p
 All build process is done in Gradle.
 
 ##Dependencies
+
+
