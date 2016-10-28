@@ -1,17 +1,17 @@
 #Development manual
 
 ##Introduction
-	This manual contains directions on how to set up and run TicTacToe on a new machine for a new developer.
+  This manual contains directions on how to set up and run TicTacToe on a new machine for a new developer.
 
 ##Accessing source code requirements
 	
-	The source code is stored on the groups repository on GitHub. There you need to clone or download the repository on to your machine. 
-	Inorder to access the organization and its repositories you'll need to have a GitHub account. 
+  The source code is stored on the groups repository on GitHub. There you need to clone or download the repository on to your machine. 
+  Inorder to access the organization and its repositories you'll need to have a GitHub account. 
 
-	[Organization](https://github.com/resorver-dogs)
+	[Organization](https://github.com/resorver-dogs/)
 
 
-	[TicTacToe repository]https://github.com/resorver-dogs/TicTacToe)
+	[TicTacToe repository]https://github.com/resorver-dogs/TicTacToe/)
 
 
 	Once all that is in oder you can run the following git command in your command prompt
