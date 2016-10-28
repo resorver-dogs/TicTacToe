@@ -1,2 +1,2 @@
 
-web: java  -cp build/install/resorver-dogs/bin/TicTacToe
+web: src/main/external/webapp
