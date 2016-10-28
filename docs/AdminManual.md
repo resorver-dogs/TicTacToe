@@ -1,20 +1,14 @@
 # Administrator manual
 
 ## Introduction
+This manual takes you throuhg the necessary steps in order to install and run 
+the game TicTacToe 
 
-This manual shows how to set up and get the application running on a fresh machine.
+##GitHub setup
+====
 
-#Requirements:
+##Pull and deploy
+====
 
-## Heroku
-There are 2 Heroku steps:
-
-* Heroku access
-* Heroku app (Heroku toolbelt)
-
-
-
-	* How to install and run the program on clients machine (in
-	  case of simple desktop program)
-	* How to deploy, run and maintain in case of client/server or
-	  web application
+##Maintenance
+====
