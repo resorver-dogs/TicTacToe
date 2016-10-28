@@ -3,7 +3,7 @@ package com.reservoir.TicTacToe;
 public class Player {
  	
   	private String name;
-  	private int highScore;
+  	private int wins = 0;
   	private char mark;
   
     public Player(char mark, String name){
@@ -15,9 +15,16 @@ public class Player {
      	return name;
     }
   
-	public char getMark() {
+		public char getMark() {
      	return mark;
     }
+
+		public void hasWon() {
+			wins++;
+		}
+		public int getWins() {
+			return wins;
+		}
   
 }
 
