@@ -26,7 +26,7 @@ public class Board {
         }
         if(board[row][col].getToken() != '-') {
             // Trying to add to cell that has already been taken - Error
-            throw new RuntimeException("Error: Cell already marked! Please add to another cell...");
+            throw new RuntimeException("Error: Cell (" + row + "," + col + ") already marked! Please add to another cell...");
         }
         // Add the mark to the cell
         board[row][col].setToken(mark);
@@ -43,6 +43,20 @@ public class Board {
 
     public Cell[][] getBoard() {
         return board;
+    }
+
+    public void printBoard() {
+        System.out.println();
+        System.out.println("-------------");
+        for(int i = 0; i < 3; i++) {
+            System.out.print("| ");
+            for(int j = 0; j < 3; j++) {
+                System.out.print(board[i][j].getToken() + " | ");
+            }
+            System.out.println();
+            System.out.println("-------------");
+        }
+        System.out.println();
     }
 
     public boolean checkForWin() {
