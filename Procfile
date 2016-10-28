@@ -1,2 +1,2 @@
 
-web: src/main/external/webapp
+web: com.reservoir.TicTacToe.Web
