@@ -15,9 +15,7 @@
 
 
 	Once all that is in oder you can run the following git command in your command prompt
-		```Git
-		git clone https://github.com/resorver-dogs/TicTacToe.
-		```
+	`git clone https://github.com/resorver-dogs/TicTacToe.`
 	and all necesseary files will install on to your Git directory.
 
 	##Build enviroment
