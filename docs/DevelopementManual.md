@@ -15,8 +15,11 @@
 
 
 	Once all that is in oder you can run the following git command in your command prompt
-		```git clone https://github.com/resorver-dogs/TicTacToe.git```
+		```
+		git clone https://github.com/resorver-dogs/TicTacToe.
+		```
 	and all necesseary files will install on to your Git directory.
 
+	###Build enviroment
 	All build process is done in Gradle.
 
