@@ -2,6 +2,7 @@
 
 ![Build Status](https://travis-ci.org/resorver-dogs/TicTacToe.svg?branch=master) [![Heroku](https://heroku-badge.herokuapp.com/?app=resorver-dogs)]
 
+
 ## Documentation
 
 [AdminManual](https://github.com/resorver-dogs/TicTacToe/blob/master/docs/AdminManual.md)

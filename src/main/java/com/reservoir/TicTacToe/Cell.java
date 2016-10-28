@@ -38,12 +38,4 @@ public class Cell extends JPanel{
 		}
 	}
 	
-	/*private class MouseListener extends MouseAdapter{
-		@Override
-		public void mouseClicked(MouseEvent e){
-		
-			if(token == ' ' && whoseT)
-		}
-	
-	}*/
 }

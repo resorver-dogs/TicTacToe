@@ -1,12 +1,10 @@
 #!/bin/bash
 
-mv ./build/libs/*.jar ./build/tmp 
-java -jar ./build/tmp/*.jar
+#mv ./build/libs/*.jar ./build/tmp 
+#java -jar ./build/tmp/*.jar
 
 
-#./gradlew installDist
+cp -R ./build/install/TicTacToe  ./build/tmp/
 
-#cp -R ./build/install/tictactoe  ./build/tmp/
-
-#./build/tmp/tictactoe/bin/tictactoe
+./build/tmp/TicTacToe/bin/TicTacToe
 

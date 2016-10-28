@@ -68,7 +68,7 @@ public class BoardTest {
     public void MarkAddedTwiceToTheSameCell() {
         Board board = new Board();
         thrown.expect(RuntimeException.class);
-        thrown.expectMessage("Error: Cell already marked! Please add to another cell...");
+        thrown.expectMessage("Error: Cell (0,0) already marked! Please add to another cell...");
         board.addToCell('X', 0, 0);
         board.addToCell('O', 0, 0);
     }
