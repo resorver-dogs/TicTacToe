@@ -8,6 +8,8 @@ Git
 
 Java version 8
 
+Gradle
+
 ##Source control and acce
 ====
 The source code is stored on the groups repository on GitHub. There you need to clone or download the repository on to your machine. 
@@ -21,4 +23,8 @@ Once all that is in oder you can run the following git command in your command p
 `git clone https://github.com/resorver-dogs/TicTacToe.` and all necesseary files will install on to your Git directory.
 
 ##Build enviroment
+====
 All build process is done in Gradle.
+
+##Dependencies
+====
