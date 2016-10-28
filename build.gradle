@@ -42,6 +42,7 @@ jar {
 
 jacoco {
   toolVersion = "0.7.6.201602180812"
+  reportsDir = file("JacocoReport")
 }
 
 task stage {
@@ -55,6 +56,7 @@ jacocoTestReport {
         xml.enabled true
         html.enabled true
         csv.enabled false
+//	html.destination "$/docs/jacocoHtml"
     }
 }
 test.finalizedBy jacocoTestReport
