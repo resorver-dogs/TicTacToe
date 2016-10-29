@@ -9,15 +9,16 @@ import static spark.Spark.*;
 
     public static void main(String[] args) {
 <span class="nc" id="L11">        port(getHerokuAssignedPort());</span>
-<span class="nc" id="L12">        get(&quot;/hello&quot;, (req, res) -&gt; &quot;Hello Heroku World&quot;);</span>
-<span class="nc" id="L13">    }</span>
+<span class="nc" id="L12">        staticFileLocation(&quot;/external/webapp&quot;);</span>
+<span class="nc" id="L13">        get(&quot;/hello&quot;, (req, res) -&gt; &quot;Hello Heroku World&quot;);</span>
+<span class="nc" id="L14">    }</span>
 
     static int getHerokuAssignedPort() {
-<span class="nc" id="L16">        ProcessBuilder processBuilder = new ProcessBuilder();</span>
-<span class="nc bnc" id="L17" title="All 2 branches missed.">        if (processBuilder.environment().get(&quot;PORT&quot;) != null) {</span>
-<span class="nc" id="L18">            return Integer.parseInt(processBuilder.environment().get(&quot;PORT&quot;));</span>
+<span class="nc" id="L17">        ProcessBuilder processBuilder = new ProcessBuilder();</span>
+<span class="nc bnc" id="L18" title="All 2 branches missed.">        if (processBuilder.environment().get(&quot;PORT&quot;) != null) {</span>
+<span class="nc" id="L19">            return Integer.parseInt(processBuilder.environment().get(&quot;PORT&quot;));</span>
         }
-<span class="nc" id="L20">        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)</span>
+<span class="nc" id="L21">        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
