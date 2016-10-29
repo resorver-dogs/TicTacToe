@@ -26,9 +26,4 @@ Player:
 Player klasinn heldur utanum nafn spilara, tákn sem spilari notar og telur fjölda sigra hjá spilurum. 
 
 
-## Það sem á að koma fram
-
-	*  Document describing the initial design.
-
-
-![Classdiagram](https://github.com/resorver-dogs/TicTacToe/blob/master/images/classDiagram.png)
+![Classdiagram](https://github.com/resorver-dogs/TicTacToe/blob/documentation/images/classDiagram.png)
