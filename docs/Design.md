@@ -19,8 +19,11 @@ Board klasinn sér um alla lógík í forritinu. Board klasinn byrjar að kalla 
 innan millunar, ef svo er þá bætir hann því tákni sem við á í þann reit. getCellMark 
 
 Cell:
+Cell klasinn teiknar upp reitina í leiknum. 
+
 
 Player:
+Player klasinn heldur utanum nafn spilara, tákn sem spilari notar og telur fjölda sigra hjá spilurum. 
 
 
 ## Það sem á að koma fram
