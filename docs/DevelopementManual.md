@@ -5,7 +5,7 @@ This manual contains directions on how to set up and run TicTacToe on a new mach
 
 ##Requirements
 
-[Git](https://github.com/)
+[GitHub](https://github.com/)
 
 [Java version 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html/)
 
