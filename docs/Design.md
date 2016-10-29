@@ -22,10 +22,6 @@ Cell:
 
 Player:
 
-Human:
-
-Computer:
-
 
 ## Það sem á að koma fram
 
