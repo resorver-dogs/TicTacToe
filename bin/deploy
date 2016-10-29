@@ -1,10 +1,9 @@
 #!/bin/bash
 
-#mv ./build/libs/*.jar ./build/tmp 
-#java -jar ./build/tmp/*.jar
+cp ./build/libs/*.jar . 
 
 
-cp -R ./build/install/TicTacToe  ./build/tmp/
+#cp -R ./build/install/TicTacToe  ./build/tmp/
 
-./build/tmp/TicTacToe/bin/TicTacToe
+#./build/tmp/TicTacToe/bin/TicTacToe
 
