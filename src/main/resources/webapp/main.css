@@ -1,0 +1,32 @@
+.container {
+	text-align: center;
+	margin: 0 auto;
+	width: 400px;
+	color: #333;
+}
+
+h1 {
+	padding: 10px;
+	font: 40px arial;
+}
+
+.board {
+	overflow: hidden;
+}
+
+.board div {
+	background-color: #d9d9d9;
+	width: 130px;
+	height: 130px;
+	float: left;
+	font-size: 80px;
+	line-height: 130px;
+}
+
+.rightBorder {
+	border-right: 2px solid #333;
+}
+
+.bottomBorder {
+	border-bottom: 2px solid #333;
+}
