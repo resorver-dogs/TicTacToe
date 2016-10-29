@@ -9,6 +9,7 @@ public class Web {
 
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
+        staticFileLocation("/external/webapp");
         get("/hello", (req, res) -> "Hello Heroku World");
     }
 
