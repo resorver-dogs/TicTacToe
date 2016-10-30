@@ -1,6 +1,6 @@
 package com.reservoir.TicTacToe;
 
-public class cell
+public class Cell
 {
 	private char mark = ' ';
 	

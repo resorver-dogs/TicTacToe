@@ -8,14 +8,14 @@ public class CellTest {
     @Test
     public void testGetMove() {
         Cell cell = new Cell();
-        assertEquals(' ', cell.getToken()); 
+        assertEquals(' ', cell.getMark()); 
     }
 
     @Test
     public void testSetMove() {
         Cell cell = new Cell();
-        cell.setToken('x');
-        assertEquals('x', cell.getToken()); 
+        cell.setMark('x');
+        assertEquals('x', cell.getMark()); 
     }
 
 }

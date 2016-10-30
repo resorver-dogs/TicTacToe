@@ -19,7 +19,7 @@ public class Board
             for(int col = 0; col < 3; col ++) 
             {
                 board[row][col] = new Cell();
-                board[row][col].setToken('-');
+                board[row][col].setMark('-');
             }
         }
     }
@@ -33,12 +33,12 @@ public class Board
             // Column and/or row parameters illegal, should be between 0-2 - Error
             throw new IllegalArgumentException("Error: Trying to add a mark outside of the board boundaries (col: 0-2, row: 0-2)"); 
         }
-        if(board[row][col].getToken() != '-') {
+        if(board[row][col].getMark() != '-') {
             // Trying to add to cell that has already been taken - Error
             throw new RuntimeException("Error: Cell (" + row + "," + col + ") already marked! Please add to another cell...");
         }
         // Add the mark to the cell
-        board[row][col].setToken(mark);
+        board[row][col].setMark(mark);
     }
 
     
@@ -50,7 +50,7 @@ public class Board
             // Column and/or row parameters illegal, should be between 0-2 - Error
             throw new IllegalArgumentException("Error: Trying to reach out of board boundaries (col: 0-2, row: 0-2)"); 
         }
-        return board[row][col].getToken();
+        return board[row][col].getMark();
     }
 
     public Cell[][] getBoard() 
@@ -68,7 +68,7 @@ public class Board
         {
             System.out.print("          | ");
             for(int j = 0; j < 3; j++) {
-                System.out.print(board[i][j].getToken() + " | ");
+                System.out.print(board[i][j].getMark() + " | ");
             }
             System.out.println();
             System.out.println("          -------------");
@@ -88,7 +88,7 @@ public class Board
         // Checks if there are three adjacent cells in a row with the same mark
         for(int i = 0; i < 3; i++) 
         {
-            if(board[i][0].getToken() != '-' && board[i][0].getToken() == board[i][1].getToken() && board[i][1].getToken() == board[i][2].getToken()) 
+            if(board[i][0].getMark() != '-' && board[i][0].getMark() == board[i][1].getMark() && board[i][1].getMark() == board[i][2].getMark()) 
             {
                 return true;
             }
@@ -101,7 +101,7 @@ public class Board
         // Checks if there are three adjacent cells in a column with the same mark
         for(int i = 0; i < 3; i++) 
         {
-            if(board[0][i].getToken() != '-' && board[0][i].getToken() == board[1][i].getToken() && board[1][i].getToken() == board[2][i].getToken()) 
+            if(board[0][i].getMark() != '-' && board[0][i].getMark() == board[1][i].getMark() && board[1][i].getMark() == board[2][i].getMark()) 
             {
                 return true;
             }
@@ -111,11 +111,11 @@ public class Board
 
     private boolean checkForDiagWin() {
         // Checks if the diagonal cells have the same mark
-        if(board[0][0].getToken() != '-' && board[0][0].getToken() == board[1][1].getToken() && board[1][1].getToken() == board[2][2].getToken()) 
+        if(board[0][0].getMark() != '-' && board[0][0].getMark() == board[1][1].getMark() && board[1][1].getMark() == board[2][2].getMark()) 
         {
             return true;
         }
-        if(board[0][2].getToken() != '-' && board[0][2].getToken() == board[1][1].getToken() && board[1][1].getToken() == board[2][0].getToken()) 
+        if(board[0][2].getMark() != '-' && board[0][2].getMark() == board[1][1].getMark() && board[1][1].getMark() == board[2][0].getMark()) 
         {
             return true;
         }        
@@ -129,7 +129,7 @@ public class Board
         {
             for(int j = 0; j < 3; j++) 
             {
-                if(board[i][j].getToken() == '-') 
+                if(board[i][j].getMark() == '-') 
                 {
                     return false;
                 }
