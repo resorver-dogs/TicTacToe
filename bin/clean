@@ -2,7 +2,7 @@
 
 ./gradlew clean
 
-if [ -f TicTacToe.jar ]; then
-  rm TicTacToe.jar
+if [ -f ../TicTacToe.jar ]; then
+  rm ../TicTacToe.jar
 fi
 
