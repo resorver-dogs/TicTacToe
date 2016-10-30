@@ -1,28 +1,33 @@
 package com.reservoir.TicTacToe;
 
-public class Player {
- 	
+public class Player 
+{ 	
   	private String name;
   	private int wins = 0;
   	private char mark;
   
-    public Player(char mark, String name){
+    public Player(char mark, String name)
+		{
         this.name = name;
       	this.mark = mark;
   	}
   
-    public String getName() {
+    public String getName() 
+		{
      	return name;
     }
   
-		public char getMark() {
+		public char getMark() 
+		{
      	return mark;
     }
 
-		public void hasWon() {
+		public void hasWon() 
+		{
 			wins++;
 		}
-		public int getWins() {
+		public int getWins() 
+		{
 			return wins;
 		}
   
