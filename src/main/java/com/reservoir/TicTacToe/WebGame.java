@@ -1,14 +1,13 @@
 package com.reservoir.TicTacToe;
 
-public class Game 
+public class WebGame 
 {
 	private Board board;
 	private Player player1;
 	private Player player2;
 	private boolean gameFinished = false;
 
-	//constructor
-	public Game()
+	public WebGame()
 	{		
 		player1 = new Player('X', "Player 1");
 		player2 = new Player('O', "Player 2");

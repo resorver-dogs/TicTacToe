@@ -12,10 +12,9 @@ public class Web {
 
     public static void main(String[] args) {
         //port(getHerokuAssignedPort());
-        staticFileLocation("/templates");
-        get("/", (request, response) -> {
-      		return new ModelAndView(new HashMap(), "templates/index.vtl");
-    }, new VelocityTemplateEngine());
+        staticFileLocation("/webapp");
+        get("/hello", (request, response) -> "Hello world");
+        get("/startgame", (request, response) -> new WebService().startGame(request, response));
 	/*
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
