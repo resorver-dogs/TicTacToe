@@ -9,6 +9,7 @@ window.onload=function(){
 function setBoard(row, col) {
    board.push(row);
    board.push(col);
+   console.log("Supsup");
 }
 
 var cells = {
