@@ -5,3 +5,4 @@
 ./bin/unit_test
 ./bin/package
 ./bin/deploy
+./bin/play
