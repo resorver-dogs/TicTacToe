@@ -17,3 +17,8 @@ var cells = {
   "8": [2,1],
   "9": [2,2],
 }
+
+
+$( ".box" ).click(function() {
+  alert( "Handler for .click() called." );
+});
