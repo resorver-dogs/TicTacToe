@@ -5,25 +5,22 @@ This how we designed of implementation of the game TitTacToe.
 
 ## Initial design
 
-Í upphafi gerðum við uppdrátt af klasariti þar sem við brutum verkefnið niður í verkþætti. Þetta klasarit innihélt klasana Game, Board, Cell, Player, Human og Computer.
+We started out by drafting a class diagram where the program was broken dowin to to tasks. The class diagram contained the following classes: TicTacToe, Game, Board, Cell, Player, HumanPlayer and Computer.
 
 TicTacToe:
-Gerir tilvik af Game og kallar svo á runGame fallið í Game klasanum til að byrja leikinn.
+Creates an instance of Game and calles the runGame() function from the Game class to start the game.
 
 Game:
-Game klasinn byrjar á að biðja um nafn leikmanna. runGame fallið sé svo um að láta leikmenn skiptast á að gera í leiknum og athugar stöðugt í gameShouldEnd fallinu hvort annarhvor
-leikmannana hefur sigrað leikinn. gameShouldEnd fallið kallar á checkForWin og isDraw föllin úr board klasanum. 
+The class Game starts by getting the players' names then runGame() keeps track of who's turn it is in the game while checking gameShouldEnd() it either of the player has won. GameShouldEnd() calles checkForWin() and isDraw() from the Board class.
 
 Board:
-Board klasinn sér um alla lógík í forritinu. Board klasinn byrjar að kalla á initBoard fallið sem upphafstillir tóma millu. addToCell fallið athugar hvort reiturinn sem er umbeðið sé 
-innan millunar, ef svo er þá bætir hann því tákni sem við á í þann reit. getCellMark 
+The Board class handles all the logig in the program. It startes by calling initBoard() wich initializes and empty TicTacToe board. AddToCell() checkes if the input in within range, if so the function calles getCellMark() and adds eihter an X or an O to the board.
 
 Cell:
-Cell klasinn teiknar upp reitina í leiknum. 
-
+The Cell calls draws the cells in the game.
 
 Player:
-Player klasinn heldur utanum nafn spilara, tákn sem spilari notar og telur fjölda sigra hjá spilurum. 
+The Player class keeps track of information about the players, names, assigned mark and number of wins for each player.
 
 
 ![Classdiagram](https://github.com/resorver-dogs/TicTacToe/blob/documentation/images/classDiagram.png)
