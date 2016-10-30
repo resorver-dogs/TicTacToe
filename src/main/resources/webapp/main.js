@@ -6,6 +6,11 @@ window.onload=function(){
   board = new Array();
 }
 
+function setBoard(row, col) {
+   board.push(row);
+   board.push(col);
+}
+
 var cells = {
   "1": [0,0],
   "2": [0,1],
