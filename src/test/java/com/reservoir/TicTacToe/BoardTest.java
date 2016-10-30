@@ -15,12 +15,12 @@ public class BoardTest {
         for(int row = 0; row < 3; row++) {
             for(int col = 0; col < 3; col ++) {
                 newBoard[row][col] = new Cell();
-                newBoard[row][col].setToken('-');
+                newBoard[row][col].setMark('-');
             }
         }
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 3; j++) {
-                assertEquals(board.getCellMark(i, j), newBoard[i][j].getToken());
+                assertEquals(board.getCellMark(i, j), newBoard[i][j].getMark());
             }
         }
        // assertArrayEquals(board.getBoard(), newBoard);        

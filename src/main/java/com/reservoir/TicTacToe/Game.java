@@ -10,8 +10,8 @@ public class Game
 	private Scanner sc;
 	private boolean isRunning = true;
 
-	//constructor
 	public Game()
+	//constructor for the Game class
 	{
 		sc = new Scanner(System.in);		
 		clearScreenAndPrintHeader();
@@ -21,6 +21,7 @@ public class Game
 	}
 
 	public void runGame()
+	// Runs the TicTacToe game and keeps track of which player's turn it is
 	{
 		clearScreenAndPrintHeader();
 		board.printBoard();
@@ -39,6 +40,7 @@ public class Game
 	}
 
 	private void clearScreenAndPrintHeader() 
+	// Used to refresh window each time and print out header lines
 	{
 		System.out.print("\033[H\033[2J");
 		System.out.flush();		
@@ -52,7 +54,8 @@ public class Game
 
 	
 	private String inputName(int i) 
-	{
+	// Takes in the players' names from console 
+		{
 		if(i == 1) 
 		{
 			System.out.println("Enter name for player X: ");
@@ -71,6 +74,7 @@ public class Game
 
 
 	private void playerPlays(Player player) 
+	// Player's turn, the player tries to add his mark to a specific cell in the board from console input 
 	{
 
 		while(true)
@@ -105,6 +109,7 @@ public class Game
 	}
 
 	private int validateIntInput() 
+	// Checks whether the console input is valid for rows and columns (0, 1 or 2)
 	{
 		while (sc.hasNext()) 
 		{
@@ -127,6 +132,7 @@ public class Game
 	} 
 
 	private boolean gameShouldEnd(Player player) 
+	// Checks if the round is finished (the player has won or there is a draw)
 	{
 		if(board.checkForWin())
 		{
@@ -144,6 +150,7 @@ public class Game
 	}
 
 	private void printResults(Player player1, Player player2) 
+	// Prints the total results (nr. of wins) when the quitting
 	{
 		System.out.println("=================================");
 		System.out.println();
@@ -154,6 +161,7 @@ public class Game
 	}
 
 	private boolean quitGame() 
+	// Used to start a new TicTacToe round or quit the game (when isRunning = false)
 	{
 		System.out.println("Another game (y/n)?");
 		while(sc.hasNextLine()) 
