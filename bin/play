@@ -1,4 +1,4 @@
 #!/bin/bash
 
-java -jar TicTacToe.jar
+java -jar ../TicTacToe.jar
 

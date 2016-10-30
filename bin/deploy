@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp ./build/libs/*.jar . 
+cp ./build/libs/*.jar .. 
 
 
 #cp -R ./build/install/TicTacToe  ./build/tmp/
